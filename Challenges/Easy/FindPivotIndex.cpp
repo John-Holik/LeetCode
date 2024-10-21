@@ -18,21 +18,23 @@ public:
             int piv = i;
             int front = 0;
             int rear = len - 1;
-            double sumL = 0;
-            double sumR = 0;
+            {
+                double sumL = 0;
+                double sumR = 0;
 
-            while (front != piv){
-                sumL += nums[front];
-                front++;
+                while (front != piv){
+                    sumL += nums[front];
+                    front++;
+                }
+                while (rear != piv){
+                    sumR += nums[rear];
+                    rear--;
+                }
+                if (sumL == sumR){
+                    return piv;
+                }
             }
-            while (rear != piv){
-                sumR += nums[rear];
-                rear--;
-            }
-            if (sumL == sumR){
-                return piv;
-            }
-        }
         return -1;
+        }
     }
 };
