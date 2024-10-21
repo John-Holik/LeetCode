@@ -7,32 +7,25 @@ My Solution:  */
 #include <string>
 using namespace std;
 
-class Solution
-{
+class Solution{
 public:
-    bool isAnagram(string s, string t)
-    {
+    bool isAnagram(string s, string t){
         unordered_map<char, int> count;
         int lengthS = s.length();
         int lengthT = t.length();
-        if (lengthS != lengthT)
-        {
+        if (lengthS != lengthT){
             return false;
         }
 
-        for (int i = 0; i < lengthS; i++)
-        {
+        for (int i = 0; i < lengthS; i++){
             count[s[i]]++;
         }
 
-        for (char st : t)
-        {
-            if (count[st] > 0)
-            {
+        for (char st : t){
+            if (count[st] > 0){
                 count[st]--;
             }
-            else if (count[st] == 0)
-            {
+            else if (count[st] == 0){
                 return false;
             }
         }
