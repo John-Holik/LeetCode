@@ -8,27 +8,20 @@ My Solution:  */
 
 using namespace std;
 
-class Solution
-{
+class Solution{
 public:
-    bool canConstruct(string ransomNote, string magazine)
-    {
+    bool canConstruct(string ransomNote, string magazine){
         unordered_map<char, int> count;
         int ransomLen = ransomNote.length();
         int magLength = magazine.length();
 
-        for (int i = 0; i < magLength; i++)
-        {
+        for (int i = 0; i < magLength; i++){
             count[magazine[i]]++;
         }
-        for (char ransom : ransomNote)
-        {
-            if (count[ransom] > 0)
-            {
+        for (char ransom : ransomNote){
+            if (count[ransom] > 0){
                 count[ransom]--;
-            }
-            else
-            {
+            }else{
                 return false;
             }
         }

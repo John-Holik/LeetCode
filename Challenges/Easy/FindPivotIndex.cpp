@@ -9,33 +9,27 @@ My Solution:  */
 #include <vector>
 using namespace std;
 
-class Solution
-{
+class Solution{
 public:
-    int pivotIndex(vector<int> &nums)
-    {
+    int pivotIndex(vector<int> &nums){
         int len = nums.size();
 
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++){
             int piv = i;
             int front = 0;
             int rear = len - 1;
             double sumL = 0;
             double sumR = 0;
 
-            while (front != piv)
-            {
+            while (front != piv){
                 sumL += nums[front];
                 front++;
             }
-            while (rear != piv)
-            {
+            while (rear != piv){
                 sumR += nums[rear];
                 rear--;
             }
-            if (sumL == sumR)
-            {
+            if (sumL == sumR){
                 return piv;
             }
         }

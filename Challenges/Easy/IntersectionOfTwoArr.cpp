@@ -7,23 +7,18 @@ My Solution:  */
 #include <unordered_map>
 
 using namespace std;
-class Solution
-{
+class Solution{
 public:
-    vector<int> intersect(vector<int> &nums1, vector<int> &nums2)
-    {
+    vector<int> intersect(vector<int> &nums1, vector<int> &nums2){
         unordered_map<int, int> count; // Create a map to hold the number as the key and the number of times it shows up as the value
         vector<int> result;
 
-        for (int num : nums1)
-        {
+        for (int num : nums1){
             count[num]++; // Add the number as the key and increment the number of times it shows up
         }
 
-        for (int num : nums2)
-        {
-            if (count[num] > 0) // Check if num from nums2 arr is in map
-            {
+        for (int num : nums2){
+            if (count[num] > 0){ // Check if num from nums2 arr is in map
                 result.push_back(num); // If so, add num to result arr
                 count[num]--; // Decrement the number of times it is in map
             }

@@ -7,15 +7,12 @@ My Solution:  */
 
 using namespace std;
 
-class Solution
-{
+class Solution{
 public:
-    int subtractProductAndSum(int n)
-    {
+    int subtractProductAndSum(int n){
         vector<int> num;
 
-        while (n > 0)
-        {
+        while (n > 0){
             int digit = n % 10;
             num.push_back(digit);
             n /= 10;
@@ -26,8 +23,7 @@ public:
         int sum = 0;
         int len = num.size();
 
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++){
             product *= num[i];
             sum += num[i];
         }

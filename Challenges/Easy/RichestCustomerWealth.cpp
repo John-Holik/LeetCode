@@ -5,24 +5,19 @@ My Solution:  */
 
 #include <vector>
 using namespace std;
-class Solution
-{
+class Solution{
 public:
-    int maximumWealth(vector<vector<int>> &accounts)
-    {
+    int maximumWealth(vector<vector<int>> &accounts){
         int rows = accounts.size();
         int cols = accounts[0].size();
         int max = 0;
 
-        for (int i = 0; i < rows; i++) // traverse through the rows
-        {
+        for (int i = 0; i < rows; i++){ // traverse through the rows
             int temp = 0; // acts as a temp accumulator for each row
-            for (int j = 0; j < cols; j++) // traverse through each col in a row
-            {
+            for (int j = 0; j < cols; j++){ // traverse through each col in a row
                 temp += accounts[i][j]; // accumulate the row value
             }
-            if (temp > max) // check for larger values
-            {
+            if (temp > max){ // check for larger values
                 max = temp;
             }
         }

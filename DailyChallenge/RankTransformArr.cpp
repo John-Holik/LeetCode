@@ -16,11 +16,9 @@ My Solution:  */
 
 using namespace std;
 
-class Solution
-{
+class Solution{
 public:
-    vector<int> arrayRankTransform(vector<int> &arr)
-    {
+    vector<int> arrayRankTransform(vector<int> &arr){
         vector<int> sortedArr = arr; // Copy array into to be sorted array
 
         size_t size = sortedArr.size(); // Get num of elements in array
@@ -34,27 +32,21 @@ public:
 
         int rank = 1; // Start with rank 1 
 
-        for (int i = 0; i < size; i++)
-        {
-            if (i == 0 || sortedArr[i] != sortedArr[i - 1]) // If it is the first element or current element is not a duplicate
-            {
+        for (int i = 0; i < size; i++){
+            if (i == 0 || sortedArr[i] != sortedArr[i - 1]){ // If it is the first element or current element is not a duplicate
                 results[i] = rank;
                 rank++;
             }
-            else
-            {
+            else{
                 results[i] = results[i - 1]; // if it is a duplicate, assign same rank
             }
         }
 
         // Sort ranking back into correct spots
         vector<int> ranks(size, 0); // Array to store correct ranking positions
-        for (int i = 0; i < size; i++)
-        {
-            for (int j = 0; j < size; j++)
-            {
-                if (arr[i] == sortedArr[j])
-                {
+        for (int i = 0; i < size; i++){
+            for (int j = 0; j < size; j++){
+                if (arr[i] == sortedArr[j]){
                     ranks[i] = results[j];
                 }
             }
@@ -72,11 +64,9 @@ public:
 
 using namespace std;
 
-class Solution
-{
+class Solution{
 public:
-    vector<int> arrayRankTransform(vector<int> &arr)
-    {
+    vector<int> arrayRankTransform(vector<int> &arr){
         vector<int> sortedArr = arr;    // Copy array into to be sorted array
         size_t size = sortedArr.size(); // Get num of elements in array
 
@@ -89,17 +79,15 @@ public:
 
         int rank = 1; // Start with rank 1
 
-        for (int i = 0; i < size; i++)
-        {
-            if (ranksMap.find(sortedArr[i]) == ranksMap.end()) // Searchs map for duplicates
-            {
+        for (int i = 0; i < size; i++){
+            if (ranksMap.find(sortedArr[i]) == ranksMap.end()){ // Searchs map for duplicates
                 ranksMap[sortedArr[i]] = rank;
                 rank++;
             }
         }
+
         vector<int> ranks(size, 0);
-        for (int i = 0; i < size; i++)
-        {
+        for (int i = 0; i < size; i++){
             ranks[i] = ranksMap[arr[i]]; // Reassigns the ranks to the correct index
         }
         return ranks;

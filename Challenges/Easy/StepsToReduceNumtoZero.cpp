@@ -3,8 +3,7 @@ In one step, if the current number is even, you have to divide it by 2, otherwis
 
 My Solution:  */
 
-class Solution
-{
+class Solution{
 public:
     int numberOfSteps(int num)
     {
